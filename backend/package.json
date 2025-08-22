@@ -1,0 +1,29 @@
+{
+  "name": "the-pipeline-cms",
+  "private": true,
+  "version": "0.1.0",
+  "description": "The Pipeline CMS Backend",
+  "scripts": {
+    "build": "strapi build",
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@strapi/strapi": "^4.25.0",
+    "@strapi/plugin-users-permissions": "^4.25.0",
+    "@strapi/plugin-i18n": "^4.25.0",
+    "pg": "^8.11.0"
+  },
+  "author": {
+    "name": "The Pipeline Team"
+  },
+  "strapi": {
+    "uuid": "pipeline-cms-uuid",
+    "template": "https://github.com/strapi/strapi-template-blog"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
+  }
+}
