@@ -1,0 +1,14 @@
+{
+  "name": "the-pipeline",
+  "version": "1.0.0",
+  "description": "Nigerian Oil & Gas Digital Hub",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "start": "cd frontend && npm start"
+  },
+  "keywords": ["oil", "gas", "nigeria", "nextjs", "strapi"],
+  "author": "The Pipeline Team",
+  "license": "MIT"
+}
