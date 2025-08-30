@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="The Pipeline - Nigeria's premier oil and gas industry hub for market intelligence, regulatory updates, and opportunities."
+        />
+        <title>The Pipeline - Nigerian Oil & Gas Hub</title>
+
+        <!-- Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/components.css" />
+        <link rel="stylesheet" href="css/responsive.css" />
+
+        <!-- Preload critical resources -->
+        <link rel="preload" href="js/main.js" as="script" />
+    </head>
+    <body>
+        <!-- Loading Screen -->
+        <div class="loading-screen" id="loadingScreen">
+            <div class="loader">
+                <div class="loader-ring"></div>
+                <div class="loader-text">THE PIPELINE</div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Overlay -->
+        <div class="nav-overlay" id="navOverlay">
+            <div class="nav-overlay-content">
+                <div class="nav-header">
+                    <span class="nav-title">Navigation</span>
+                    <button class="nav-close" id="navClose">&times;</button>
+                </div>
+                <nav class="nav-menu">
+                    <a href="index.html" class="nav-item active">
+                        <span class="nav-icon">🏠</span>
+                        <span class="nav-text">Home</span>
+                    </a>
+                    <a href="http://localhost:3000/#opportunities" class="nav-item">
+                        <span class="nav-icon">💼</span>
+                        <span class="nav-text">Opportunities Hub</span>
+                    </a>
+                    <a href="http://localhost:3000/#directory" class="nav-item">
+                        <span class="nav-icon">🏢</span>
+                        <span class="nav-text">Company Directory</span>
+                    </a>
+                    <a href="http://localhost:3000/#regulatory" class="nav-item">
+                        <span class="nav-icon">📋</span>
+                        <span class="nav-text">Regulatory Updates</span>
+                    </a>
+                    <a href="http://localhost:3000/#insights" class="nav-item">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Market Insights</span>
+                    </a>
+                </nav>
+                <div class="nav-footer">
+                    <div class="nav-contact">
+                        <p>Nigeria's Oil & Gas Hub</p>
+                        <p class="nav-contact-sub">
+                            Powered by local expertise
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Top Navigation Bar -->
+        <nav class="navbar" id="navbar">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">THE PIPELINE</span>
+                    <span class="logo-subtitle">Nigeria O&G Hub</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <ul class="nav-links desktop-nav">
+                    <li>
+                        <a href="http://localhost:3000/#opportunities">Opportunities</a>
+                    </li>
+                    <li><a href="http://localhost:3000/#directory">Directory</a></li>
+                    <li><a href="http://localhost:3000/#regulatory">Regulatory</a></li>
+                    <li><a href="http://localhost:3000/#insights">Insights</a></li>
+                </ul>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Floating Action Button (FAB) for Mobile Navigation -->
+        <button class="fab" id="fabButton">
+            <span class="fab-icon">⚡</span>
+            <span class="fab-text">Quick Nav</span>
+        </button>
+        <div id="main-content" class="main">
+            <!-- Hero Section with Enhanced Parallax -->
+            <section class="hero-section" id="home">
+                <!-- Enhanced Geological Layers -->
+                <div
+                    class="geological-layer layer-surface"
+                    data-speed="0.2"
+                    data-depth="1"
+                ></div>
+                <div
+                    class="geological-layer layer-crust"
+                    data-speed="0.5"
+                    data-depth="2"
+                ></div>
+                <div
+                    class="geological-layer layer-mantle"
+                    data-speed="0.8"
+                    data-depth="3"
+                ></div>
+                <div
+                    class="geological-layer layer-core"
+                    data-speed="1.2"
+                    data-depth="4"
+                ></div>
+
+                <!-- Enhanced Data Veins with Animation -->
+                <div class="data-vein-container">
+                    <div class="data-vein vein-primary" data-flow="1"></div>
+                    <div class="data-vein vein-secondary" data-flow="2"></div>
+                    <div class="data-vein vein-tertiary" data-flow="3"></div>
+                    <div class="data-vein vein-quaternary" data-flow="4"></div>
+                </div>
+
+                <!-- Floating Industry Elements -->
+                <div class="floating-elements">
+                    <div class="floating-element oil-rig" data-float="slow">
+                        🏗️
+                    </div>
+                    <div class="floating-element pipeline" data-float="medium">
+                        🔗
+                    </div>
+                    <div class="floating-element data-node" data-float="fast">
+                        💎
+                    </div>
+                    <div
+                        class="floating-element regulatory-seal"
+                        data-float="slow"
+                    >
+                        🛡️
+                    </div>
+                </div>
+
+                <!-- Hero Content -->
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge-text"
+                            >Nigeria's Premier O&G Platform</span
+                        >
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="title-primary">THE PIPELINE</span>
+                        <span class="title-secondary"
+                            >Navigate Nigeria's Energy Sector</span
+                        >
+                    </h1>
+                    <p class="hero-description">
+                        Your central intelligence hub for market data,
+                        regulatory compliance, company insights, and industry
+                        opportunities across Nigeria's oil and gas sector.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#features" class="cta-primary"
+                            >Explore the Depths</a
+                        >
+                        <a href="http://localhost:3000/#opportunities" class="cta-secondary"
+                            >View Opportunities</a
+                        >
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="500">0</span>
+                            <span class="stat-label">Companies</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="1250">0</span>
+                            <span class="stat-label">Opportunities</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="48">0</span>
+                            <span class="stat-label">Updates/Month</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Enhanced Features Section -->
+            <section class="features-section" id="features">
+                <div class="section-header">
+                    <h2 class="section-title">Intelligence at Every Layer</h2>
+                    <p class="section-subtitle">
+                        Dive deep into Nigeria's oil and gas ecosystem with
+                        comprehensive data and insights
+                    </p>
+                </div>
+
+                <div class="features-grid">
+                    <div
+                        class="feature-card enhanced"
+                        data-feature="opportunities"
+                    >
+                        <div class="card-header">
+                            <div class="feature-icon opportunities-icon">
+                                💼
+                            </div>
+                            <div class="feature-badge">Live Updates</div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="feature-title">Opportunities Hub</h3>
+                            <p class="feature-description">
+                                Access the latest job openings, tenders, and
+                                procurement opportunities from major operators
+                                and service companies across Nigeria.
+                            </p>
+                            <div class="feature-stats">
+                                <div class="stat">
+                                    <span class="stat-value" data-count="156"
+                                        >0</span
+                                    >
+                                    <span class="stat-text">Active Jobs</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value" data-count="89"
+                                        >0</span
+                                    >
+                                    <span class="stat-text">Open Tenders</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <a
+                                href="http://localhost:3000/#opportunities"
+                                class="action-btn"
+                                >View Opportunities</a
+                            >
+                        </div>
+                    </div>
+
+                    <div class="feature-card enhanced" data-feature="directory">
+                        <div class="card-header">
+                            <div class="feature-icon directory-icon">🏢</div>
+                            <div class="feature-badge">NCDMB Verified</div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="feature-title">Company Directory</h3>
+                            <p class="feature-description">
+                                Comprehensive database of operators, service
+                                providers, and suppliers with real-time NCDMB
+                                compliance and certification status.
+                            </p>
+                            <div class="feature-stats">
+                                <div class="stat">
+                                    <span class="stat-value" data-count="500"
+                                        >0</span
+                                    >
+                                    <span class="stat-text">Companies</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value" data-count="78"
+                                        >0</span
+                                    >
+                                    <span class="stat-text"
+                                        >% Local Content</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <a href="http://localhost:3000/#directory" class="action-btn"
+                                >Browse Directory</a
+                            >
+                        </div>
+                    </div>
+
+                    <div
+                        class="feature-card enhanced"
+                        data-feature="regulatory"
+                    >
+                        <div class="card-header">
+                            <div class="feature-icon regulatory-icon">📋</div>
+                            <div class="feature-badge">Real-time</div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="feature-title">
+                                Regulatory Intelligence
+                            </h3>
+                            <p class="feature-description">
+                                Stay ahead of NUPRC, NCDMB, and NNPC policy
+                                changes with instant notifications and detailed
+                                compliance guidance.
+                            </p>
+                            <div class="feature-stats">
+                                <div class="stat">
+                                    <span class="stat-value" data-count="24"
+                                        >0</span
+                                    >
+                                    <span class="stat-text">This Month</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value" data-count="98"
+                                        >0</span
+                                    >
+                                    <span class="stat-text">% Accuracy</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <a href="http://localhost:3000/#regulatory" class="action-btn"
+                                >View Updates</a
+                            >
+                        </div>
+                    </div>
+
+                    <div class="feature-card enhanced" data-feature="insights">
+                        <div class="card-header">
+                            <div class="feature-icon insights-icon">📊</div>
+                            <div class="feature-badge">AI-Powered</div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="feature-title">Market Intelligence</h3>
+                            <p class="feature-description">
+                                Advanced analytics on production trends, pricing
+                                dynamics, and market opportunities powered by AI
+                                and local expertise.
+                            </p>
+                            <div class="feature-stats">
+                                <div class="stat">
+                                    <span class="stat-value" data-count="1.8"
+                                        >0</span
+                                    >
+                                    <span class="stat-text"
+                                        >Mbpd Production</span
+                                    >
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value" data-count="12"
+                                        >0</span
+                                    >
+                                    <span class="stat-text">Key Insights</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <a href="http://localhost:3000/#insights" class="action-btn"
+                                >View Insights</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Access Section -->
+            <section class="quick-access-section">
+                <div class="quick-access-header">
+                    <h3>Quick Access</h3>
+                    <p>Jump directly to what you need</p>
+                </div>
+                <div class="quick-access-grid" id="quickAccessGrid">
+                    <!-- Dynamic content will be loaded here -->
+                </div>
+            </section>
+        </div>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-logo">
+                        <span class="logo-text">THE PIPELINE</span>
+                        <span class="logo-subtitle"
+                            >Nigeria O&G Intelligence Hub</span
+                        >
+                    </div>
+                    <p class="footer-description">
+                        Empowering Nigeria's oil and gas sector with
+                        intelligence, transparency, and opportunity access.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Platform</h4>
+                        <a href="http://localhost:3000/#opportunities">Opportunities</a>
+                        <a href="http://localhost:3000/#directory">Directory</a>
+                        <a href="http://localhost:3000/#regulatory">Regulatory</a>
+                        <a href="http://localhost:3000/#insights">Insights</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Resources</h4>
+                        <a href="#about">About</a>
+                        <a href="#contact">Contact</a>
+                        <a href="#privacy">Privacy</a>
+                        <a href="#terms">Terms</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>
+                    &copy; 2024 The Pipeline. Built for Nigeria's Energy Future.
+                </p>
+            </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script src="data/mock-data.js"></script>
+        <script src="js/api.js"></script>
+        <script src="js/router.js"></script>
+        <script src="js/navigation.js"></script>
+        <script src="js/parallax.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
