@@ -184,7 +184,7 @@ class PipelineRouter {
         const { page = 1, type = "", sector = "" } = params;
 
         try {
-            const opportunities = await window.sanityAPI.getOpportunities({
+            const opportunities = await window.appwriteAPI.getOpportunities({
                 type,
                 sector,
                 limit: 12,
@@ -225,7 +225,7 @@ class PipelineRouter {
         const { id } = params;
 
         try {
-            const opportunity = await window.sanityAPI.getOpportunityById(id);
+            const opportunity = await window.appwriteAPI.getOpportunityById(id);
 
             if (!opportunity) {
                 this.render404();
@@ -245,7 +245,7 @@ class PipelineRouter {
                                 <span class="badge badge-primary">${
                                     opportunity.opportunityType
                                 }</span>
-                                <span class="detail-date">Closes: ${window.sanityAPI.formatDate(
+                                <span class="detail-date">Closes: ${window.appwriteAPI.formatDate(
                                     opportunity.closingDate
                                 )}</span>
                             </div>
@@ -295,7 +295,7 @@ class PipelineRouter {
                                         <h4>Application Details</h4>
                                         <div class="detail-item">
                                             <strong>Closing Date:</strong>
-                                            <span>${window.sanityAPI.formatDate(
+                                            <span>${window.appwriteAPI.formatDate(
                                                 opportunity.closingDate
                                             )}</span>
                                         </div>
@@ -351,7 +351,7 @@ class PipelineRouter {
         const { page = 1, sector = "" } = params;
 
         try {
-            const companies = await window.sanityAPI.getCompanies({
+            const companies = await window.appwriteAPI.getCompanies({
                 sector,
                 limit: 12,
                 offset: (page - 1) * 12
@@ -390,7 +390,7 @@ class PipelineRouter {
         const { id } = params;
 
         try {
-            const company = await window.sanityAPI.getCompanyById(id);
+            const company = await window.appwriteAPI.getCompanyById(id);
 
             if (!company) {
                 this.render404();
@@ -528,7 +528,7 @@ class PipelineRouter {
         const { page = 1, source = "" } = params;
 
         try {
-            const updates = await window.sanityAPI.getRegulatoryUpdates({
+            const updates = await window.appwriteAPI.getRegulatoryUpdates({
                 source,
                 limit: 12,
                 offset: (page - 1) * 12
@@ -567,7 +567,7 @@ class PipelineRouter {
         const { id } = params;
 
         try {
-            const update = await window.sanityAPI.getRegulatoryUpdateById(id);
+            const update = await window.appwriteAPI.getRegulatoryUpdateById(id);
 
             if (!update) {
                 this.render404();
@@ -587,7 +587,7 @@ class PipelineRouter {
                                 <span class="badge badge-warning">${
                                     update.source
                                 }</span>
-                                <span class="detail-date">${window.sanityAPI.formatDate(
+                                <span class="detail-date">${window.appwriteAPI.formatDate(
                                     update.publishedDate
                                 )}</span>
                             </div>
@@ -644,7 +644,7 @@ class PipelineRouter {
                                                         }</a></h4>
                                                         <span class="meta">${
                                                             related.source
-                                                        } • ${window.sanityAPI.formatDate(
+                                                        } • ${window.appwriteAPI.formatDate(
                                                             related.publishedDate
                                                         )}</span>
                                                     </div>
@@ -667,7 +667,7 @@ class PipelineRouter {
                                         </div>
                                         <div class="detail-item">
                                             <strong>Published:</strong>
-                                            <span>${window.sanityAPI.formatDate(
+                                            <span>${window.appwriteAPI.formatDate(
                                                 update.publishedDate
                                             )}</span>
                                         </div>
@@ -676,7 +676,7 @@ class PipelineRouter {
                                                 ? `
                                             <div class="detail-item">
                                                 <strong>Effective Date:</strong>
-                                                <span>${window.sanityAPI.formatDate(
+                                                <span>${window.appwriteAPI.formatDate(
                                                     update.effectiveDate
                                                 )}</span>
                                             </div>
@@ -712,7 +712,7 @@ class PipelineRouter {
         const { page = 1, category = "" } = params;
 
         try {
-            const articles = await window.sanityAPI.getArticles({
+            const articles = await window.appwriteAPI.getArticles({
                 category,
                 limit: 12,
                 offset: (page - 1) * 12
@@ -751,7 +751,7 @@ class PipelineRouter {
         const { id } = params;
 
         try {
-            const article = await window.sanityAPI.getArticleById(id);
+            const article = await window.appwriteAPI.getArticleById(id);
 
             if (!article) {
                 this.render404();
@@ -774,7 +774,7 @@ class PipelineRouter {
                                             `<span class="badge badge-primary">${tag}</span>`
                                     )
                                     .join("")}
-                                <span class="detail-date">${window.sanityAPI.formatDate(
+                                <span class="detail-date">${window.appwriteAPI.formatDate(
                                     article.publishedDate
                                 )}</span>
                             </div>
@@ -782,7 +782,7 @@ class PipelineRouter {
                             <div class="article-meta">
                                 By <strong>${
                                     article.author
-                                }</strong> • ${window.sanityAPI.getTimeAgo(
+                                }</strong> • ${window.appwriteAPI.getTimeAgo(
                                     article.publishedDate
                                 )}
                             </div>
@@ -793,7 +793,7 @@ class PipelineRouter {
                         article.coverImage
                             ? `
                         <div class="article-image">
-                            <img src="${window.sanityAPI.urlFor(
+                            <img src="${window.appwriteAPI.urlFor(
                                 article.coverImage
                             )}" alt="${article.title}">
                         </div>
@@ -827,7 +827,7 @@ class PipelineRouter {
                                                         related._id
                                                     }">${related.title}</a></h4>
                                                     <p>${related.summary}</p>
-                                                    <span class="meta">${window.sanityAPI.formatDate(
+                                                    <span class="meta">${window.appwriteAPI.formatDate(
                                                         related.publishedDate
                                                     )}</span>
                                                 </div>
@@ -864,7 +864,7 @@ class PipelineRouter {
         }
 
         try {
-            const results = await window.sanityAPI.search(
+            const results = await window.appwriteAPI.search(
                 q,
                 type ? [type] : []
             );
@@ -1091,104 +1091,56 @@ class PipelineRouter {
 
     async getQuickAccessHTML() {
         try {
-            const featured = await window.sanityAPI.getFeaturedContent();
+            const featured = await window.appwriteAPI.getFeaturedContent();
+
+            // Check if data exists and has properties
+            if (!featured) {
+                return this.getQuickAccessFallback();
+            }
+
             return `
                 <div class="quick-access-header">
                     <h3>Quick Access</h3>
                     <p>Jump directly to what you need</p>
                 </div>
                 <div class="quick-access-grid" id="quickAccessGrid">
-                    ${
-                        featured.featuredOpportunities
-                            ?.map(
-                                opp => `
-                        <div class="quick-access-item card" onclick="router.navigate('opportunities/${opp._id}')">
-                            <div class="quick-access-icon">💼</div>
-                            <h4 class="quick-access-title">${opp.title}</h4>
-                            <p class="quick-access-description">${opp.company.companyName}</p>
-                            <div class="quick-access-meta">
-                                <span class="badge badge-primary">${opp.opportunityType}</span>
-                            </div>
-                        </div>
-                    `
-                            )
-                            .join("") || ""
-                    }
-                    
-                    ${
-                        featured.latestUpdates
-                            ?.map(
-                                update => `
-                        <div class="quick-access-item card" onclick="router.navigate('regulatory/${update._id}')">
-                            <div class="quick-access-icon">📋</div>
-                            <h4 class="quick-access-title">${update.title}</h4>
-                            <p class="quick-access-description">${update.source}</p>
-                            <div class="quick-access-meta">
-                                <span class="badge badge-warning">${update.source}</span>
-                            </div>
-                        </div>
-                    `
-                            )
-                            .join("") || ""
-                    }
-                    
-                    ${
-                        featured.topCompanies
-                            ?.map(
-                                company => `
-                        <div class="quick-access-item card" onclick="router.navigate('directory/${company._id}')">
-                            <div class="quick-access-icon">🏢</div>
-                            <h4 class="quick-access-title">${company.companyName}</h4>
-                            <p class="quick-access-description">${company.sector}</p>
-                            <div class="quick-access-meta">
-                                <span class="badge badge-secondary">Verified</span>
-                            </div>
-                        </div>
-                    `
-                            )
-                            .join("") || ""
-                    }
+                   ${this.getQuickAccessFallback()}
                 </div>
             `;
         } catch (error) {
             console.error("Failed to load quick access content:", error);
-            return `
-                <div class="quick-access-header">
-                    <h3>Quick Access</h3>
-                    <p>Jump directly to what you need</p>
-                </div>
-                <div class="quick-access-grid">
-                    <div class="quick-access-item card" onclick="router.navigate('opportunities')">
-                        <div class="quick-access-icon">💼</div>
-                        <h4 class="quick-access-title">Latest Jobs</h4>
-                        <p class="quick-access-description">View recent job postings</p>
-                        <div class="quick-access-meta">
-                            <span class="badge badge-primary">Hot</span>
-                        </div>
-                    </div>
-                    <div class="quick-access-item card" onclick="router.navigate('regulatory')">
-                        <div class="quick-access-icon">📋</div>
-                        <h4 class="quick-access-title">New Regulations</h4>
-                        <p class="quick-access-description">Recent regulatory updates</p>
-                        <div class="quick-access-meta">
-                            <span class="badge badge-warning">NUPRC</span>
-                        </div>
-                    </div>
-                    <div class="quick-access-item card" onclick="router.navigate('directory')">
-                        <div class="quick-access-icon">🏢</div>
-                        <h4 class="quick-access-title">Top Companies</h4>
-                        <p class="quick-access-description">Leading industry players</p>
-                        <div class="quick-access-meta">
-                            <span class="badge badge-secondary">Verified</span>
-                        </div>
-                    </div>
-                </div>
-            `;
+            return this.getQuickAccessFallback();
         }
     }
 
-    // Continue with all remaining helper methods...
-    // (The rest of the methods from the previous router.js artifact)
+    getQuickAccessFallback() {
+        return `
+        <div class="quick-access-item card" onclick="router.navigate('opportunities')">
+            <div class="quick-access-icon">💼</div>
+            <h4 class="quick-access-title">Latest Jobs</h4>
+            <p class="quick-access-description">View recent job postings</p>
+            <div class="quick-access-meta">
+                <span class="badge badge-primary">Hot</span>
+            </div>
+        </div>
+        <div class="quick-access-item card" onclick="router.navigate('regulatory')">
+            <div class="quick-access-icon">📋</div>
+            <h4 class="quick-access-title">New Regulations</h4>
+            <p class="quick-access-description">Recent regulatory updates</p>
+            <div class="quick-access-meta">
+                <span class="badge badge-warning">NUPRC</span>
+            </div>
+        </div>
+        <div class="quick-access-item card" onclick="router.navigate('directory')">
+            <div class="quick-access-icon">🏢</div>
+            <h4 class="quick-access-title">Top Companies</h4>
+            <p class="quick-access-description">Leading industry players</p>
+            <div class="quick-access-meta">
+                <span class="badge badge-secondary">Verified</span>
+            </div>
+        </div>
+    `;
+    }
 
     getOpportunityCardHTML(opportunity) {
         return `
@@ -1199,7 +1151,7 @@ class PipelineRouter {
                     <span class="badge badge-primary">${
                         opportunity.opportunityType
                     }</span>
-                    <span class="card-date">${window.sanityAPI.getTimeAgo(
+                    <span class="card-date">${window.appwriteAPI.getTimeAgo(
                         opportunity.publishedAt || opportunity._createdAt
                     )}</span>
                 </div>
@@ -1213,7 +1165,7 @@ class PipelineRouter {
                         <strong>${
                             opportunity.company?.companyName || "Company"
                         }</strong>
-                        <span class="closing-date">Closes: ${window.sanityAPI.formatDate(
+                        <span class="closing-date">Closes: ${window.appwriteAPI.formatDate(
                             opportunity.closingDate
                         )}</span>
                     </div>
@@ -1230,7 +1182,7 @@ class PipelineRouter {
                 <div class="card-header">
                     ${
                         company.logo
-                            ? `<img src="${window.sanityAPI.urlFor(
+                            ? `<img src="${window.appwriteAPI.urlFor(
                                   company.logo
                               )}" alt="${
                                   company.companyName
@@ -1262,7 +1214,7 @@ class PipelineRouter {
             }')">
                 <div class="card-header">
                     <span class="badge badge-warning">${update.source}</span>
-                    <span class="card-date">${window.sanityAPI.formatDate(
+                    <span class="card-date">${window.appwriteAPI.formatDate(
                         update.publishedDate
                     )}</span>
                 </div>
@@ -1286,7 +1238,7 @@ class PipelineRouter {
                     article.coverImage
                         ? `
                     <div class="card-image">
-                        <img src="${window.sanityAPI.urlFor(
+                        <img src="${window.appwriteAPI.urlFor(
                             article.coverImage
                         )}" alt="${article.title}">
                     </div>
@@ -1300,7 +1252,7 @@ class PipelineRouter {
                                 ?.map(tag => `<span class="tag">${tag}</span>`)
                                 .join("") || ""
                         }
-                        <span class="card-date">${window.sanityAPI.formatDate(
+                        <span class="card-date">${window.appwriteAPI.formatDate(
                             article.publishedDate
                         )}</span>
                     </div>
@@ -1495,7 +1447,7 @@ class PipelineRouter {
                     <span class="badge">${typeLabels[result._type]}</span>
                     ${
                         result.date
-                            ? `<span class="search-result-date">${window.sanityAPI.formatDate(
+                            ? `<span class="search-result-date">${window.appwriteAPI.formatDate(
                                   result.date
                               )}</span>`
                             : ""
@@ -1727,16 +1679,16 @@ class PipelineRouter {
             // Preload common data based on route
             switch (path.split("/")[0]) {
                 case "opportunities":
-                    await window.sanityAPI.getOpportunities({ limit: 5 });
+                    await window.appwriteAPI.getOpportunities({ limit: 5 });
                     break;
                 case "directory":
-                    await window.sanityAPI.getCompanies({ limit: 5 });
+                    await window.appwriteAPI.getCompanies({ limit: 5 });
                     break;
                 case "regulatory":
-                    await window.sanityAPI.getRegulatoryUpdates({ limit: 5 });
+                    await window.appwriteAPI.getRegulatoryUpdates({ limit: 5 });
                     break;
                 case "insights":
-                    await window.sanityAPI.getArticles({ limit: 5 });
+                    await window.appwriteAPI.getArticles({ limit: 5 });
                     break;
             }
         } catch (error) {
